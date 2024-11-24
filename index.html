@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrities Book</title>
+
+    <style>
+        .celebrities-card {
+            border: 1px solid black;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 0 15px 0 15px;
+            background-color: #d9d9d9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Celebrities</h1>
+    <input type="text" id="celebrities-name" placeholder="Enter celebrity Name">
+
+    <button type="button" id="add-celebrities" onclick="addcelebrities() ">Add Celebrities</button>
+    <button type="button" onclick="loadcelebrities()">Load Celebrities</button>
+
+    <div id="celebrities-container">
+
+    </div>
+    <script>
+        const celebrities = [
+            "Samradnya Thakare",
+            "Shraddha Kapoor",
+            "Aditya Roy Kappor",
+            "Ian Somerhalder",
+            "Nina Dobrev",
+            "Paul Wesley",
+        ]
+
+        function loadcelebrities() {
+            const celebritiescontainer = document.getElementById("celebrities-container")
+            celebritiescontainer.innerHTML = ""
+            for (let i = 0; i < celebrities.length; i++) {
+                celebritiescontainer.innerHTML += `<div class="celebrities-card">${i + 1})${celebrities[i]}</div>`
+            }
+        }
+        function addcelebrities() {
+            const celebritiesInput = document.getElementById("celibrities-name")
+            celebrities.push(celebritiesInput.value);
+            celebritiesInput.value = ""
+            alert("Celebrities added succesfully")
+        }
+
+    </script>
+</body>
+
+</html>
